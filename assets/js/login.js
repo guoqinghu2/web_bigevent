@@ -40,6 +40,7 @@ $(function() {
     // 注册模块
     // 监听注册表单的提交事件
     $('#form_reg').on('submit', function(e) {
+
         // 阻止表单默认提交
         e.preventDefault()
 
@@ -50,7 +51,7 @@ $(function() {
         }
 
         // 发送一个携带了注册用户名和密码的post请求
-        $.post('api/reguser', data, function(res) {
+        $.post('/api/reguser', data, function(res) {
 
             // 请求失败
             if (res.status !== 0) {
@@ -89,11 +90,13 @@ $(function() {
                     return layer.msg('登录失败')
                 }
 
-                // 登录成功
+                // 登录成功提示信息
                 layer.msg('登录成功')
 
-                // 跳转到首页
-                // location.href = '../大事件后后台管理项目/home/dashboard.html'
+                // 登录成功后 将token存入本地存储中
+                localStorage.setItem('token', res.token)
+                    // // 跳转到首页
+                location.href = '../大事件后后台管理项目/index.html'
             }
         })
 
