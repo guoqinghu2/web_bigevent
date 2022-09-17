@@ -44,11 +44,11 @@ function getUserInfo() {
         // },
         success: function(res) {
             if (res.status !== 0) {
-                console.log(res);
+
                 return layui.layer.msg('获取用户信息失败！')
 
             }
-            console.log(res.data);
+
             //    获取用户信息成功后  渲染用户头像
             // 调用 renderAvatar()
             renderAvatar(res.data)
@@ -56,11 +56,11 @@ function getUserInfo() {
         // 无论调用成功还是失败 都会调用这个complete回调函数、
         // 权限接口限制
         complete: function(res) {
-            console.log('执行了回调函数');
+
             // 在complete回调函数中  可以使用 res.responseJSON拿到服务器响应回来的数据
             if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
                 // 1强制清空token
-                console.log('ok');
+
                 localStorage.removeItem('token')
                     // 2强制跳转登录页面
                 location.href = './login.html'

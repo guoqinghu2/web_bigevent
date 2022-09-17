@@ -30,9 +30,9 @@
                         <span class="text-avatar">A</span> 个人中心
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">更换头像</a></dd>
-                        <dd><a href="">重置密码</a></dd>
+                        <dd><a href="./user/user_info.html" target="fm">基本资料</a></dd>
+                        <dd><a href="./user/user_avatar.html" target="fm">更换头像</a></dd>
+                        <dd><a href="./user/user_pwd.html" target="fm">重置密码</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
@@ -83,9 +83,9 @@
                             <span class="iconfont icon-user"></span>个人中心
                         </a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-template-1"></i>基本资料</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-template-1"></i>更换头像</a></dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-template-1"></i>重置密码</a></dd>
+                            <dd><a href="./user/user_info.html" target="fm"><i class="layui-icon layui-icon-template-1"></i>基本资料</a></dd>
+                            <dd><a href="./user/user_avatar.html" target="fm"><i class="layui-icon layui-icon-template-1"></i>更换头像</a></dd>
+                            <dd><a href="./user/user_pwd.html" target="fm"><i class="layui-icon layui-icon-template-1"></i>重置密码</a></dd>
                         </dl>
                     </li>
 
@@ -106,7 +106,15 @@
             底部固定区域
         </div>
     </div>
-    <script src="./layui/layui.js"></script>
+
+    <!-- <script src="./layui/layui.js"></script> -->
+
+    <script src="./assets/lib/layui/layui.all.js"></script>
+    <!-- 导入jquery请求 -->
+    <script src="./assets/lib/jquery.js"></script>
+
+    <!-- 导入自动拼接url地址的脚本 -->
+    <script src="./assets/js/baseApi.js"></script>
     <script>
         //JS 
         layui.use(['element', 'layer', 'util'], function() {
@@ -138,12 +146,6 @@
 
         });
     </script>
-    <script src="./assets/lib/layui/layui.all.js"></script>
-    <!-- 导入jquery请求 -->
-    <script src="./assets/lib/jquery.js"></script>
-
-    <!-- 导入自动拼接url地址的脚本 -->
-    <script src="./assets/js/baseApi.js"></script>
 
     <!-- 导入自己的js -->
     <script src="./assets/js/index.js"></script>
